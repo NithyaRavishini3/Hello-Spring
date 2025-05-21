@@ -5,16 +5,19 @@ import com.rungroop.web.models.Club;
 import com.rungroop.web.repositary.ClubRepositary;
 import com.rungroop.web.service.ClubService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class ClubServiceImpl implements ClubService {
 
     private ClubRepositary clubRepositary;
 
     @Autowired
     public ClubServiceImpl(ClubRepositary clubRepositary) {
+
         this.clubRepositary = clubRepositary;
     }
 
