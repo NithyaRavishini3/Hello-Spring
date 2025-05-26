@@ -16,7 +16,7 @@ public class ClubDto {
     private Long id;
     private String title;
     private String photourl;
-    private String cintent;
+    private String content;
     private LocalDateTime createdOn;
     private LocalDateTime updateedOn;
 }
