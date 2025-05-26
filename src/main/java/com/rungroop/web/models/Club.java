@@ -21,7 +21,7 @@ public class Club {
     private Long id;
     private String title;
     private String photourl;
-    private String cintent;
+    private String content;
     @CreationTimestamp
     private LocalDateTime createdOn;
     @CreationTimestamp
