@@ -23,8 +23,8 @@ public class ClubServiceImpl implements ClubService {
 
     @Override
     public List<ClubDto> findAllClubs() {
-       List<Club> clubs = clubRepositary.findAll();
-       return clubs.stream().map((club) -> mapToClubDto(club)).collect(Collectors.toList());
+        List<Club> clubs = clubRepositary.findAll();
+        return clubs.stream().map((club) -> mapToClubDto(club)).collect(Collectors.toList());
     }
 
     private ClubDto mapToClubDto(Club club){
