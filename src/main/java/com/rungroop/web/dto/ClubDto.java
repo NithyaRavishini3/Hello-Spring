@@ -9,6 +9,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
+//from DTO takes data from frontend and store
 @Data
 @Builder
 public class ClubDto {
