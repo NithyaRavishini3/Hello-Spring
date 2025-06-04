@@ -5,6 +5,7 @@ import com.rungroop.web.models.Club;
 import com.rungroop.web.service.ClubService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -29,6 +30,13 @@ public class ClubController {
         List<ClubDto> clubs = clubService.findAllClubs();
         model.addAttribute("clubs", clubs);
         return "clubs-list";
+    }
+
+    @GetMapping("/clubs/{clubId}")
+    public String clubDetail(@PathVariable("clubId") long clubId, Model model){
+        ClubDto clubDto = clubService.findClubById(clubId);
+        model.addAttribute("club", clubDto);
+        return "clubs-detail";
     }
 
     @GetMapping("/clubs/new")
