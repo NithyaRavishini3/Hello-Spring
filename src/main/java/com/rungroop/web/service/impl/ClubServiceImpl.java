@@ -53,7 +53,7 @@ public class ClubServiceImpl implements ClubService {
     @Override
     public List<ClubDto> searchClubs(String query){
         List<Club> clubs = clubRepositary.searchClubs(query);
-        return clubs.stream().map(club -> ,mapToClubDto(club)).collect(Collectors.toList());
+        return clubs.stream().map(club -> mapToClubDto(club)).collect(Collectors.toList());
     }
 
 
