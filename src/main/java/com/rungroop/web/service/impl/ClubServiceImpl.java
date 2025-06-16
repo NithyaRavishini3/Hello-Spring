@@ -64,7 +64,7 @@ public class ClubServiceImpl implements ClubService {
                 .photourl(club.getPhotourl())
                 .content(club.getContent())
                 .createdOn(club.getCreatedOn())
-                .updateedOn(club.getUpdateedOn())
+                .updatedOn(club.getUpdatedOn())
                 .build();
         return clubDto;
     }
@@ -76,7 +76,7 @@ public class ClubServiceImpl implements ClubService {
                 .photourl(club.getPhotourl())
                 .content(club.getContent())
                 .createdOn(club.getCreatedOn())
-                .updateedOn(club.getUpdateedOn())
+                .updatedOn(club.getUpdatedOn())
                 .build();
         return clubDto;
     }
