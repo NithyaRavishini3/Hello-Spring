@@ -22,5 +22,5 @@ public class ClubDto {
     @NotEmpty(message = "Content should not be empty")
     private String content;
     private LocalDateTime createdOn;
-    private LocalDateTime updateedOn;
+    private LocalDateTime updatedOn;
 }
