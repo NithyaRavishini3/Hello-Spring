@@ -9,6 +9,13 @@ import com.rungroop.web.service.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import static com.rungroop.web.mapper.EventMapper.mapToEvent;
+import static com.rungroop.web.mapper.EventMapper.mapToEventDto;
+
 @Service
 public class EventServiceImpl implements EventService {
 
@@ -29,19 +36,10 @@ public class EventServiceImpl implements EventService {
         eventRepositary.save(event);
     }
 
-    private Event mapToEvent(EventDto eventDto){
-        return Event.builder()
-                .id(eventDto.getId())
-                .name(eventDto.getName())
-                .startTime(eventDto.getStartTime())
-                .endTime(eventDto.getEndTime())
-                .type(eventDto.getType())
-                .photourl(eventDto.getPhotourl())
-               // .createdOn(eventDto.getCreatedOn())
-               // .updatedOn(eventDto.getUpdatedOn())
-                .build();
+    @Override
+    public List<EventDto> findAllEvents() {
+        List<Event> events = eventRepositary.findAll();
+        return events.stream().map(event -> mapToEventDto(event)).collect(Collectors.toList());
     }
-
-
 
 }
