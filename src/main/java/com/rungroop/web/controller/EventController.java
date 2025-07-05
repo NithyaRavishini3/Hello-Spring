@@ -31,6 +31,13 @@ public class EventController {
         return "events-list";
     }
 
+    @GetMapping("/events/{eventId")
+    public String viewEvent(@PathVariable("eventId")Long eventId, Model model){
+        EventDto eventDto = eventService.findByEventId(eventId);
+        model.addAttribute("event", eventId);
+        return "events-detail";
+    }
+
     @GetMapping("events/{clubId}/new")
     public String CreateEventForm(@PathVariable("clubId") Long clubId, Model model){
         Event event = new Event();

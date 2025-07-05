@@ -9,7 +9,6 @@ import com.rungroop.web.service.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -40,6 +39,12 @@ public class EventServiceImpl implements EventService {
     public List<EventDto> findAllEvents() {
         List<Event> events = eventRepositary.findAll();
         return events.stream().map(event -> mapToEventDto(event)).collect(Collectors.toList());
+    }
+
+    @Override
+    public EventDto findByEventId(Long eventId){
+        Event event = eventRepositary.findById(eventId).get();
+        return mapToEventDto(event);
     }
 
 }
