@@ -29,7 +29,7 @@
                            class="h3 fw-bolder text-decoration-none link-dark stretched-link"
                            href="#!"></a>
                     </div>
-                    <a class="btn btn-primary">View</a>
+                    <a th:href="@{/events/{eventId}(eventId=${event.id})}" class="btn btn-primary">View</a>
                     <a class="btn btn-primary">Edit</a>
                 </div>
             </div>
