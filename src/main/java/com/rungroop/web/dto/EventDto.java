@@ -24,5 +24,5 @@ public class EventDto {
     private String photourl;
     private LocalDateTime createdOn;
     private LocalDateTime updatedOn;
-    private List<EventDto> events;
+    //private List<EventDto> events;
 }
